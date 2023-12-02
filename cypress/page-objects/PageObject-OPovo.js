@@ -10,9 +10,9 @@ export class PageObjectOPovo {
         cy.get('#busca', {timeout: 1000}).focus().type(searchKey);
         cy.get('.btnBuscaButton').click();
     }
-    validateSearchPage(validateKey){
+    validateSearchPage(validateKey,validateValue){
         cy.get('#listagem').within(() => {
-            cy.get('.caixa-listagem ').should(validateKey, 0);
+            cy.get('.caixa-listagem ').should(validateKey, validateValue);
           });
     }
    

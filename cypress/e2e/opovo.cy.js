@@ -10,13 +10,13 @@ describe('O Povo Testes', () => {
 
   it('Deve retornar resultado ao pesquisar por UFC', () => {
     pageObjectOPovo.searchPage('UFC');
-    pageObjectOPovo.validateSearchPage('have.length.greaterThan');
+    pageObjectOPovo.validateSearchPage('have.length.greaterThan', 0);
   });
   
   it('Deve vefiricar se resultado ao pesquisar por UFC - Última Semana não é vazio', () => {
     pageObjectOPovo.searchPage('UFC');
     pageObjectOPovo.addFilterToSearchPage('li[rel="last_week"]')
-    pageObjectOPovo.validateSearchPage('have.length.be.gte');
+    pageObjectOPovo.validateSearchPage('have.length.be.gte', 0);
   });
   
   it('Visitar página de um dos cadernos de Esportes', () => {
