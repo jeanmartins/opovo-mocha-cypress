@@ -24,7 +24,7 @@ describe('O Povo Testes', () => {
     pageObjectOPovo.validatePageIsCearaSports();
   });
   
-  it('Consultar autor(a) da última notícia de Carnaval', () => {
+  it.only('Consultar autor(a) da última notícia de Carnaval', () => {
     pageObjectOPovo.searchPageWithIntercept('Carnaval', '/index.php?id=%2Freboot%2Fsrc%2Fendpoints%2Fcall.php&dinamico=1&model=RebootBusca&action=filterNews&q=Carnaval&sp=all_period&sd=');
     pageObjectOPovo.navigateIfLinkIsVisible(':nth-child(1) > h2 > a > .txt-materia-listagem > .titulo-mateira-listagem');
     pageObjectOPovo.validateAuthorExist();

@@ -13,7 +13,7 @@ export class PageObjectOPovo {
 
     searchPageWithIntercept(searchKey,urlIntercept){
         cy.intercept('GET', urlIntercept).as('search');
-        searchPage(searchKey);
+        this.searchPage(searchKey);
         cy.wait(['@search'], { responseTimeout: 15000 });
     }
     validateSearchPage(validateKey,validateValue){
