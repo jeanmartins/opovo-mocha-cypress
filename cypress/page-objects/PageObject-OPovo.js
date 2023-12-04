@@ -12,7 +12,7 @@ export class PageObjectOPovo {
     }
     validateSearchPage(validateKey,validateValue){
         cy.get('#listagem').within(() => {
-            cy.get('.caixa-listagem ').should(validateKey, validateValue);
+            cy.get('.caixa-listagem').should(validateKey, validateValue);
           });
     }
    
