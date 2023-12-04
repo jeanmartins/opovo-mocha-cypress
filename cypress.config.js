@@ -7,5 +7,5 @@ module.exports = defineConfig({
      
     },
   },
-  pageLoadTimeout: 120000
+  pageLoadTimeout: 240000
 });

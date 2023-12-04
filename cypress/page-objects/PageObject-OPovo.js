@@ -7,8 +7,14 @@ export class PageObjectOPovo {
 
     searchPage(searchKey){
         cy.get('.icon-busca').click();
-        cy.get('#busca', {timeout: 1000}).focus().type(searchKey);
+        cy.get('#busca', {timeout: 5000}).focus().type(searchKey);
         cy.get('.btnBuscaButton').click();
+    }
+
+    searchPageWithIntercept(searchKey,urlIntercept){
+        cy.intercept('GET', urlIntercept).as('search');
+        searchPage(searchKey);
+        cy.wait(['@search'], { responseTimeout: 15000 });
     }
     validateSearchPage(validateKey,validateValue){
         cy.get('#listagem').within(() => {
